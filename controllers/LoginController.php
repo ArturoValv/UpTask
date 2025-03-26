@@ -28,14 +28,13 @@ class LoginController
                     if (password_verify($_POST['password'], $auth->password)) {
                         //Iniciar sesión
                         session_start();
-                        $_SESSION['id'] = $usuario->id;
-                        $_SESSION['nombre'] = $usuario->nombre;
-                        $_SESSION['email'] = $usuario->email;
+                        $_SESSION['id'] = $auth->id;
+                        $_SESSION['nombre'] = $auth->nombre;
+                        $_SESSION['email'] = $auth->email;
                         $_SESSION['login'] = true;
 
                         //Redireccionar
-                        header('Location: /proyectos');
-                        
+                        header('Location: /dashboard');
                     } else {
                         Usuario::setAlerta('error', 'Password incorrecto');
                     }
@@ -54,7 +53,9 @@ class LoginController
 
     public static function logout()
     {
-        echo "Desde Logout";
+        session_start();
+        $_SESSION = [];
+        header('Location: /');
     }
 
     public static function crear(Router $router)

@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.sidebar {
+  padding: 20px;
+  background-color: v.$indigo;
+
+  h2 {
+    margin: 0;
+    color: v.$blanco;
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    margin-top: 5rem;
+
+    a {
+      margin-bottom: 1.5rem;
+      padding: 0.7rem;
+      display: block;
+      font-size: 1.2rem;
+      color: v.$blanco;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover,
+      &.activo {
+        background-color: color.scale(v.$indigo, $lightness: -20%);
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}

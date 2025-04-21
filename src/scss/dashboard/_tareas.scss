@@ -9,15 +9,15 @@
   .agregar-tarea {
     @include m.boton(v.$cyan, v.$blanco);
   }
+}
 
-  .listado-tareas {
-    list-style: none;
-    margin-top: 3rem;
-    padding: 0;
+.listado-tareas {
+  list-style: none;
+  margin-top: 3rem;
+  padding: 0;
 
-    .no-tareas {
-      text-align: center;
-    }
+  .no-tareas {
+    text-align: center;
   }
 }
 
@@ -49,7 +49,7 @@
       font-weight: 700;
       border-radius: 1rem;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }

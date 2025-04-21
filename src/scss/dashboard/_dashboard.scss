@@ -1,7 +1,9 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
+@use "sass:color";
 
 .dashboard {
+  min-height: 100vh;
   background-color: v.$grisClaro;
 
   @include m.tablet {
@@ -36,6 +38,14 @@
         font-weight: bold;
         font-size: 1.4rem;
       }
+    }
+  }
+
+  .enlace {
+    color: v.$indigo;
+
+    &:hover {
+      color: color.adjust(v.$indigo, $lightness: -20%);
     }
   }
 }
